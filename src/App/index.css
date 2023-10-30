@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Brush";
+  src: url(../component/Fonts/HL-Brush-3BK.ttf.woff);
+}
+@font-face {
+  font-family: "Beckman";
+  src: url(../component/Fonts/beckman.otf);
+}
+
+@font-face {
+  font-family: "Arenq";
+  src: url(../component/Fonts/arenq.otf);
+}
+@font-face {
+  font-family: "Mova";
+  src: url(../component/Fonts/mova.otf);
+}
+@font-face {
+  font-family: "Stockholm";
+  src: url(../component/Fonts/Stockholm.ttf.woff);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../assets/background/whitehook.jpg);
+  object-fit: cover;
+  background-position: contain;
+}
+
+.input-outline {
+  outline: none;
+  /* background-color: rgb(103, 101, 128); */
+}
+
+.buttons button {
+  color: white;
+  background: #242323;
+  padding: 10px;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.buttons button:hover {
+  background-color: gray;
+}
+
+.buttons .character {
+  background-color: #e78f1b;
+  /* color: yellow; */
+}
+.buttons .character:hover {
+  color: #e78f1b;
+  background-color: aliceblue;
+}
+
+.buttons .top-row {
+  background: rgb(207, 206, 206);
+  color: #000;
+}
+.buttons .top-row:hover {
+  /* color: #e78f1b; */
+  background-color: aliceblue;
+}
+.buttons .zero {
+  grid-column: span 2;
+  width: 100%;
+  justify-content: start;
+  padding-left: 32px;
+}
+
+.magician {
+  position: relative;
+}
+
+.magician::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.magician::after {
+  content: attr(data-mid-letter);
+  display: inline-block;
+  color: #e78f1b;
+}
