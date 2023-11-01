@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { location, search } from "../../assets";
 // import axios from "axios";
-import { Weather } from "../../App/App";
+import { weather } from "../../App/App";
 
 const CurrentWeather = () => {
   const {
@@ -10,14 +10,14 @@ const CurrentWeather = () => {
     searchCity,
     weatherData,
     setWeatherData,
-  } = useContext(Weather);
+  } = useContext(weather);
 
   return (
-    <div className=" uppercase font-semibold text-gray-200/90 overflow-hidden rounded-2xl bg-gradient-to-r from-[#db841100] font-poppins to-[#4d3a05] h-full">
-      <div className="flex flex-col items-center justify-around inset-0  h-full">
+    <div className=" uppercase font-semibold text-white overflow-hidden md:bg-gradient-to-r from-[#db841100] font-poppins to-[#4d3a05] px-10 lg:px-0 md:h-full lg:flex-none flex flex-col justify-center">
+      <div className="flex flex-col items-center lg:justify-around justify-center h-[80%] inset-0  lg:h-full gap-5 md:gap-0">
         <div
           typeof="search"
-          className="w-[80%] h-10 inline-flex items-center bg-[#121a166c] rounded-full px-5 z-50"
+          className="w-[80%] md:h-14 h-10 inline-flex items-center bg-[#121a166c] rounded-full px-5 z-50"
         >
           <img src={location} alt="" />
           {/* <p>search</p> */}
@@ -36,40 +36,41 @@ const CurrentWeather = () => {
           />
         </div>
         {weatherData.name != undefined ? (
-          <div className="flex flex-row-reverse h-[80%] w-full">
-            <div className="w-1/2 text-center flex flex-col items-center justify-center">
+          <div className="flex flex-col md:flex-row-reverse h-[80%] gap-5 md:gap-0 w-full">
+
+            <div className="md:w-1/2 w-full text-center flex flex-col items-center justify-center">
               <p>
                 {weatherData.name}, {weatherData?.sys?.country}
               </p>
-              <p className="text-9xl text-white">
+              <p className="text-9xl">
                 {weatherData?.main?.temp.toFixed()}
                 <span className="ms-1">°</span>
               </p>
               <img
                 src={`http://openweathermap.org/img/w/${weatherData?.weather[0]?.icon}.png`}
                 alt=""
-                className="w-[70px]"
+                className="w-[80px]"
               />
 
               <p className="">{weatherData?.weather[0]?.description}</p>
             </div>
 
-            <div className="flex flex-col w-1/2 items-center text-center gap-4 text-sm tracking-wider justify-around  ">
-              <div className="w-full py-7 space-y-2 bg-[#261C0D] shadow-lg rounded-2xl ">
+            <div className="flex flex-col w-full md:w-1/2 items-center text-center gap-4 text-sm tracking-wider justify-around  ">
+              <div className="w-full md:py-7 py-2 md:space-y-2 space-y-1 bg-[#261C0D] shadow-lg rounded-2xl ">
                 <p className="font-normal">it Feels Like</p>
                 <p className="text-2xl">
                   {weatherData?.main?.feels_like.toFixed()}°
                 </p>
               </div>
 
-              <div className=" py-7  space-y-2 bg-[#261C0D] rounded-2xl w-full shadow-lg ">
+              <div className=" md:py-7 py-2 md:space-y-2 space-y-1 bg-[#261C0D] rounded-2xl w-full shadow-lg ">
                 <p className="font-normal">Humidity</p>
                 <p className="text-2xl">
                   {weatherData?.main?.humidity.toFixed()}%
                 </p>
               </div>
 
-              <div className=" w-full py-7 space-y-2 bg-[#261C0D] shadow-lg rounded-2xl ">
+              <div className=" w-full md:py-7 py-2 md:space-y-2 space-y-1 bg-[#261C0D] shadow-lg rounded-2xl ">
                 <p className="font-normal">Wind speed</p>
                 <p className="text-2xl lowercase">
                   {weatherData?.wind?.speed.toFixed()}K/M

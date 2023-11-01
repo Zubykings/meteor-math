@@ -6,6 +6,7 @@ import { sunset } from "../../assets";
 import { motion } from "framer-motion";
 import { fadeIn, slideIn } from "../utils/motion";
 import AnimatedLetters from "../AnimatedLetters";
+import Navbar from "../Navbar";
 
 const slideInVariants = {
   hidden: { x: -100, y: -100 },
@@ -20,21 +21,23 @@ const Hero = ({ title }) => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="md:w-[420vh] h-screen flex md:flex-row flex-col "
+      className="w-full flex lg:flex-row h-screen justify-center items-center flex-col "
     >
-      <motion.div
-        id="calculator"
-        className="flex md:flex-row flex-col justify-around mt-[9vh] items-center md:w-[210vh] bg-transparent"
-      >
-        <motion.div className="uppercase text-7xl font-stockholm font-bold text-gray-800 w-1/2">
-          <div className="w-[110%]">
-            <AnimatedLetters
-              title={`do you think you're a
+      <div className="w-full fixed bg-transparent z-10 top-0 ">
+        <Navbar />
+      </div>
+
+      <motion.div className="flex lg:flex-row flex-col items-center justify-around h-full px-4 lg:px-0 mt-[9vh] w-[90%] ">
+
+        <motion.div className="uppercase lg:text-[4.5rem] md:text-[3.5rem] text-[1.5rem] text-center lg:text-start font-stockholm font-bold text-gray-800">
+          <AnimatedLetters
+            title={`do you think you're a
              mathe`}
-            />
-          </div>
+          />
         </motion.div>
+
         <motion.div
+          className=""
           variants={{
             hidden: { y: 400 },
             visible: { y: 0 },
@@ -44,13 +47,6 @@ const Hero = ({ title }) => {
           <Calculator />
         </motion.div>
       </motion.div>
-
-      <div id="weather" className="md:w-[210vh] flex justify-end relative">
-        <img src={sunset} alt="" className="w-full object-cover relative" />
-        <div className="w-1/2 absolute inset-y-0 justify-end ">
-          <CurrentWeather />
-        </div>
-      </div>
     </motion.div>
   );
 };

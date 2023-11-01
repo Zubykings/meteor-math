@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -27,36 +27,39 @@ const Navbar = () => {
     {
       label: "Home",
       id: "home",
+      to: "/",
     },
     {
       label: "Calculator",
       id: "calculator",
+      to: "/calculator",
     },
     {
       label: "Weather",
       id: "weather",
+      to: "/weather",
     },
   ];
 
   return (
     <div className={`w-full flex `}>
-      <motion.nav className="flex w-2/4 justify-center ">
+      <motion.nav className="flex w-full lg:w-2/4 justify-center ">
         <motion.ul
           variants={container}
           initial="hidden"
           animate="show"
-          className="flex w-3/4 justify-around text-3xl font-brush py-2"
+          className="flex w-3/4 justify-around md:text-3xl font-brush py-2"
         >
           {navLinks.map((link) => (
-            <motion.li
+            <Link
+              to={link.to}
               variants={item}
-              // size={50}
               key={link.id}
               className={`${active === link.label ? "text-[#e78f1b]" : ""}`}
               onClick={() => setActive(link.label)}
             >
               <a href={`#${link.id}`}>{link.label}</a>
-            </motion.li>
+            </Link>
           ))}
         </motion.ul>
       </motion.nav>

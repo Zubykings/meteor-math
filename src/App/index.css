@@ -55,6 +55,15 @@ body {
   font-size: 30px;
 }
 
+@media screen and (max-width: 860px) {
+  .buttons button {
+    padding: 10px;
+    height: 60px;
+    width: 60px;
+    font-size: 1.5rem;
+  }
+}
+
 .buttons button:hover {
   background-color: gray;
 }
@@ -99,4 +108,17 @@ body {
   content: attr(data-mid-letter);
   display: inline-block;
   color: #e78f1b;
+}
+
+.w-text {
+  /* position: relative;
+  color: transparent;
+  background-image: linear-gradient(to bottom, #161616, #6d6c6c, white);
+  -webkit-background-clip: text;
+  background-clip: text; */
+  /* color: white; */
+  /* background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to bottom, #161616, #6d6c6c, white); */
 }

@@ -113,8 +113,8 @@ const Calculator = () => {
   ];
 
   return (
-    <div className="border-4 rounded-2xl border-[#BE7D21] w-[420px] calc ">
-      <div className="flex flex-col rounded-lg  justify-center  px-7 pb-5">
+    <div className="border-4 rounded-2xl border-[#BE7D21] w-full md:w-[420px] calc ">
+      <div className="flex flex-col rounded-lg justify-center  px-7 pb-5">
         <div className=" text-end text-6xl my-2 h-[70px] px-19 overflow-hidden">{expression}</div>
         <div className="buttons  grid grid-cols-4 gap-3 ">
           {calcCharacters.map((calculator, index) => (
