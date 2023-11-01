@@ -17,9 +17,9 @@ const AnimatedLetters = ({ title, style }) => {
       <React.Fragment key={index}>
         <motion.div
           className={`inline-block tracking-wide ${
-            isHighlighted ? "magician" : ""
+            isHighlighted ? "magician lg:text-[4rem] " : ""
           }`}
-          data-text="mathe"
+          data-text=""
           data-mid-letter="magician?"
           key={index}
           initial={{ opacity: 0, y: -50 }}

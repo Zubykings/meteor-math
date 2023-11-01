@@ -29,7 +29,7 @@ const Hero = ({ title }) => {
 
       <motion.div className="flex lg:flex-row flex-col items-center justify-around h-full px-4 lg:px-0 mt-[9vh] w-[90%] ">
 
-        <motion.div className="uppercase lg:text-[4.5rem] md:text-[3.5rem] text-[1.5rem] text-center lg:text-start font-stockholm font-bold text-gray-800">
+        <motion.div className="uppercase lg:text-[4.5rem] md:text-[3.5rem] text-[1.8rem] text-center lg:text-start font-stockholm font-bold text-gray-800">
           <AnimatedLetters
             title={`do you think you're a
              mathe`}

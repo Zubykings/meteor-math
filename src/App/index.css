@@ -94,7 +94,9 @@ body {
 
 .magician {
   position: relative;
+  /* font-size: 4rem; */
 }
+
 
 .magician::before {
   content: attr(data-text);

@@ -22,8 +22,8 @@ const Weather = () => {
       </div>
       <div className="absolute w-full inset-0 flex md:flex-row flex-col justify-center items-center bg-gradient-to-r from-[#db841100] gap-5 md:gap-0 to-[#4d3a05] ">
         <motion.div
-          className={`uppercase md:ps-4 lg:text-[4rem] md:text-[3rem] text-[1.5rem] text-center lg:text-start font-stockholm font-bold text-white md:bg-transparent w-text w-full md:w-1/2  flex items-end md:flex-none ${
-            weatherData.name != undefined ? "hidden" : "block h-1/2"
+          className={`uppercase md:px-6 lg:text-[4rem] md:text-[3rem] text-[1.5rem] text-center lg:text-start font-stockholm font-bold text-white md:bg-transparent w-text w-full md:w-1/2 flex  items-center ${
+            weatherData.name != undefined ? "hidden" : "block h-1/2 items-end"
           } `}
         >
           <AnimatedLetters title={`find out what it's like outside`} />
